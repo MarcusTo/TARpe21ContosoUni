@@ -26,7 +26,7 @@ namespace ContosoUniversityTARpe21.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Hire Date")]
         public DateTime HireDate { get; set; }
-        public ICollection<CourseAssignment> CourseAssignments { get; set; }
-        public OfficeAssignment OfficeAssignments { get; set; }
+        public ICollection<CourseAssignment>? CourseAssignments { get; set; }
+        public OfficeAssignment? OfficeAssignments { get; set; }
     }
 }

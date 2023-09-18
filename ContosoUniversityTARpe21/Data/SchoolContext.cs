@@ -26,5 +26,8 @@ namespace ContosoUniversityTARpe21.Data
             modelBuilder.Entity<OfficeAssignment>().ToTable("OfficeAssignment");
             modelBuilder.Entity<CourseAssignment>().ToTable("CourseAssignment");
         }
+
+
+
     }
 }
