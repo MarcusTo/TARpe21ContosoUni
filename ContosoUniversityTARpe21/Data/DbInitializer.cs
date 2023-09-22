@@ -92,46 +92,6 @@ namespace ContosoUniversityTARpe21.Data
             }
             context.SaveChanges();
 
-            var courses = new Course[]
-            {
-                new Course() {CourseID=1050,Title="Programmeerimine",Credits=160},
-                new Course() {CourseID=6900,Title="Keemia",Credits=160},
-                new Course() {CourseID=1420,Title="Matemaatika",Credits=160},
-                new Course() {CourseID=6666,Title="Testimine",Credits=160},
-                new Course() {CourseID=1234,Title="Riigikaitse",Credits=160}
-            };
-
-            foreach (Course c in courses)
-            {
-                context.Courses.Add(c);
-            }
-            context.SaveChanges();
-
-
-            var enrollments = new Enrollment[] 
-            {
-                new Enrollment{StudentID=1,CourseID=1050,Grade=Grade.A},
-                new Enrollment{StudentID=1,CourseID=6900,Grade=Grade.B},
-                new Enrollment{StudentID=1,CourseID=1420,Grade=Grade.A},
-                new Enrollment{StudentID=1,CourseID=1050,Grade=Grade.A},
-                new Enrollment{StudentID=2,CourseID=1050,Grade=Grade.C},
-                new Enrollment{StudentID=2,CourseID=6900,Grade=Grade.D},
-                new Enrollment{StudentID=3,CourseID=1420,Grade=Grade.F},
-                new Enrollment{StudentID=3,CourseID=1050,Grade=Grade.A},
-                new Enrollment{StudentID=3,CourseID=1050,Grade=Grade.A},
-                new Enrollment{StudentID=3,CourseID=6900,Grade=Grade.F},
-                new Enrollment{StudentID=3,CourseID=1420,Grade=Grade.A},
-                new Enrollment{StudentID=4,CourseID=1050,Grade=Grade.D},
-                new Enrollment{StudentID=5,CourseID=1050,Grade=Grade.A},
-                new Enrollment{StudentID=5,CourseID=6900,Grade=Grade.A},
-                new Enrollment{StudentID=5,CourseID=1420,Grade=Grade.F},
-            }; 
-            foreach (Enrollment e in enrollments)
-            {
-                context.Enrollments.Add(e);
-            }
-            context.SaveChanges();
-
             var officeAssignments = new OfficeAssignment[]
             {
                 new OfficeAssignment()
@@ -156,6 +116,20 @@ namespace ContosoUniversityTARpe21.Data
             }
             context.SaveChanges();
 
+            var courses = new Course[]
+            {
+                new Course() {CourseID=1050,Title="Programmeerimine",Credits=160},
+                new Course() {CourseID=6900,Title="Keemia",Credits=160},
+                new Course() {CourseID=1420,Title="Matemaatika",Credits=160},
+                new Course() {CourseID=6666,Title="Testimine",Credits=160},
+                new Course() {CourseID=1234,Title="Riigikaitse",Credits=160}
+            };
+
+            foreach (Course c in courses)
+            {
+                context.Courses.Add(c);
+            }
+            context.SaveChanges();
             var courseInstructors = new CourseAssignment[]
             {
                 new CourseAssignment
@@ -199,6 +173,34 @@ namespace ContosoUniversityTARpe21.Data
                 context.CourseAssignments.Add(ci);
             }
             context.SaveChanges();
+
+
+            var enrollments = new Enrollment[] 
+            {
+                new Enrollment{StudentID=1,CourseID=1050,Grade=Grade.A},
+                new Enrollment{StudentID=1,CourseID=6900,Grade=Grade.B},
+                new Enrollment{StudentID=1,CourseID=1420,Grade=Grade.A},
+                new Enrollment{StudentID=1,CourseID=1050,Grade=Grade.A},
+                new Enrollment{StudentID=2,CourseID=1050,Grade=Grade.C},
+                new Enrollment{StudentID=2,CourseID=6900,Grade=Grade.D},
+                new Enrollment{StudentID=3,CourseID=1420,Grade=Grade.F},
+                new Enrollment{StudentID=3,CourseID=1050,Grade=Grade.A},
+                new Enrollment{StudentID=3,CourseID=1050,Grade=Grade.A},
+                new Enrollment{StudentID=3,CourseID=6900,Grade=Grade.F},
+                new Enrollment{StudentID=3,CourseID=1420,Grade=Grade.A},
+                new Enrollment{StudentID=4,CourseID=1050,Grade=Grade.D},
+                new Enrollment{StudentID=5,CourseID=1050,Grade=Grade.A},
+                new Enrollment{StudentID=5,CourseID=6900,Grade=Grade.A},
+                new Enrollment{StudentID=5,CourseID=1420,Grade=Grade.F},
+            }; 
+            foreach (Enrollment e in enrollments)
+            {
+                context.Enrollments.Add(e);
+            }
+            context.SaveChanges();
+                   
+
+            
 
         }
     }
