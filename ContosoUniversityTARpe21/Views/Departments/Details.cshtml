@@ -1,0 +1,41 @@
+﻿@model ContosoUniversityTARpe21.Models.Department
+@{
+    ViewData["Title"] = "Details";
+}
+<div
+
+<h1>Details</h1>
+    <h4>Department</h4>
+    <hr />
+    <dl class="row">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dt>
+                @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dt>
+                @Html.DisplayNameFor(model => model.Budget)
+        </dt>
+        <dt>
+                @Html.DisplayNameFor(model => model.Budget)
+        </dt>
+        <dt>
+                @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dt>
+                @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dt>
+                @Html.DisplayNameFor(model => model.Administrator)
+        </dt>
+        <dt>
+                @Html.DisplayNameFor(model => model.Administrator)
+        </dt>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DepartmentID">Edit</a>
+    <a asp-action="Index">Back To List</a>
+</div>
+
