@@ -118,11 +118,11 @@ namespace ContosoUniversityTARpe21.Data
 
             var courses = new Course[]
             {
-                new Course() {CourseID=1050,Title="Programmeerimine",Credits=160},
-                new Course() {CourseID=6900,Title="Keemia",Credits=160},
-                new Course() {CourseID=1420,Title="Matemaatika",Credits=160},
-                new Course() {CourseID=6666,Title="Testimine",Credits=160},
-                new Course() {CourseID=1234,Title="Riigikaitse",Credits=160}
+                new Course() {CourseID=1050,Title="Programmeerimine",Credits=160, DepartmentID = departments.Single(s => s.Name == "xd").DepartmentID},
+                new Course() {CourseID=6900,Title="Keemia",Credits=160, DepartmentID = departments.Single(s => s.Name == "xd").DepartmentID},
+                new Course() {CourseID=1420,Title="Matemaatika",Credits=160, DepartmentID = departments.Single(s => s.Name == "xd").DepartmentID},
+                new Course() {CourseID=6666,Title="Testimine",Credits=160, DepartmentID = departments.Single(s => s.Name == "xd").DepartmentID},
+                new Course() {CourseID=1234,Title="Riigikaitse",Credits=160,  DepartmentID = departments.Single(s => s.Name == "xd").DepartmentID}}
             };
 
             foreach (Course c in courses)
