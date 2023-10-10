@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "krbowYalC/74mLGHhFlZptqNT6sHNnTHMRTlpGmQ4Htt3SOgkr9EVVMDgFQ23BgX7+ZreH2UCZdCq4W8YErJ5w==",
+  "dgSpecHash": "xwryjkgdvrsu/LyRpqqSEaewV7V13NoN1ekbf6YGIgBGv1kxvgmVKYexmU8RrUMzjmRBTDptG7TsKvnkXMUzXQ==",
   "success": false,
-  "projectFilePath": "E:\\koolipask\\TARpe21ContosoUni\\ContosoUniversityTARpe21\\ContosoUniversityTARpe21.csproj",
+  "projectFilePath": "D:\\TARpe21ContosoUniversity\\TARpe21ContosoUni\\ContosoUniversityTARpe21\\ContosoUniversityTARpe21.csproj",
   "expectedPackageFiles": [],
   "logs": [
     {
@@ -27,7 +27,7 @@
       "code": "NU1301",
       "level": "Error",
       "message": "The local source 'C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages' doesn't exist.",
-      "libraryId": "System.Configuration.ConfigurationManager"
+      "libraryId": "Microsoft.EntityFrameworkCore.Sqlite"
     },
     {
       "code": "NU1301",

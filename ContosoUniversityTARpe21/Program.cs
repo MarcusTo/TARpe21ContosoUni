@@ -18,7 +18,6 @@ public class Program
 
         CreateDbIfNotExists(app);
 
-       
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
@@ -37,10 +36,12 @@ public class Program
 
         app.MapControllerRoute
             (name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}"
+            pattern: "{controller=home}/{Action=Index}/{id?}"
             );
         app.Run();
+
     }
+
     private static void CreateDbIfNotExists(IHost host)
     {
         using (var scope = host.Services.CreateScope())
@@ -48,7 +49,8 @@ public class Program
             var services = scope.ServiceProvider;
             try
             {
-                var context = services.GetRequiredService<SchoolContext>();
+                var context = services.GetRequiredService<
+                    SchoolContext>();
                 DbInitializer.Initialize(context);
             }
             catch (Exception ex)
@@ -58,5 +60,4 @@ public class Program
             }
         }
     }
-    
 }
