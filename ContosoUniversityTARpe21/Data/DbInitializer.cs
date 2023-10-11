@@ -29,13 +29,6 @@ namespace ContosoUniversityTARpe21.Data
             }
             context.SaveChanges();
 
-
-            context.Database.EnsureCreated();
-
-            if (context.Instructors.Any())
-            {
-                return;
-            }
             var instructors = new Instructor[]
             {
                 new Instructor {FirstMidName = "Jõulu", LastName = "Vana", HireDate = DateTime.Parse("1995-03-11")},
@@ -49,12 +42,6 @@ namespace ContosoUniversityTARpe21.Data
             }
             context.SaveChanges();
 
-            context.Database.EnsureCreated();
-
-            if (context.Departments.Any())
-            {
-                return;
-            }
             var departments = new Department[]
             {
                 new Department
@@ -62,33 +49,48 @@ namespace ContosoUniversityTARpe21.Data
                     Name = "Infotechnology",
                     Budget = 0,
                     StartDate = DateTime.Parse("2007-09-01"),
-                    InstructorID = instructors.Single(i => i.LastName == "Parm").ID 
+                    InstructorID = instructors.Single(i => i.LastName == "Parm").ID
                 },
                 new Department
                 {
                     Name = "Joomarlus",
                     Budget = 0,
                     StartDate = DateTime.Parse("2007-09-01"),
-                    InstructorID = instructors.Single(i => i.LastName == "Vana").ID 
+                    InstructorID = instructors.Single(i => i.LastName == "Vana").ID
                 },
                 new Department
                 {
                     Name = "Internet Trolling & Tiktok 101",
                     Budget = 0,
                     StartDate = DateTime.Parse("2007-09-01"),
-                    InstructorID = instructors.Single(i => i.LastName == "Kuningas").ID 
+                    InstructorID = instructors.Single(i => i.LastName == "Kuningas").ID
                 },
                 new Department
                 {
                     Name = "Kokandus",
                     Budget = 0,
                     StartDate = DateTime.Parse("2007-09-01"),
-                    InstructorID = instructors.Single(i => i.LastName == "Suprise").ID 
+                    InstructorID = instructors.Single(i => i.LastName == "Suprise").ID
                 },
             };
             foreach (Department d in departments)
             {
                 context.Departments.Add(d);
+            }
+            context.SaveChanges();
+
+            var courses = new Course[]
+            {
+                new Course() {CourseID=1050,Title="Programmeerimine",Credits=160},
+                new Course() {CourseID=6900,Title="Keemia",Credits=160},
+                new Course() {CourseID=1420,Title="Matemaatika",Credits=160},
+                new Course() {CourseID=6666,Title="Testimine",Credits=160},
+                new Course() {CourseID=1234,Title="Riigikaitse",Credits=160}
+            };
+
+            foreach (Course c in courses)
+            {
+                context.Courses.Add(c);
             }
             context.SaveChanges();
 
@@ -116,20 +118,6 @@ namespace ContosoUniversityTARpe21.Data
             }
             context.SaveChanges();
 
-            var courses = new Course[]
-            {
-                new Course() {CourseID=1050,Title="Programmeerimine",Credits=160, DepartmentID = departments.Single(s => s.Name == "xd").DepartmentID},
-                new Course() {CourseID=6900,Title="Keemia",Credits=160, DepartmentID = departments.Single(s => s.Name == "xd").DepartmentID},
-                new Course() {CourseID=1420,Title="Matemaatika",Credits=160, DepartmentID = departments.Single(s => s.Name == "xd").DepartmentID},
-                new Course() {CourseID=6666,Title="Testimine",Credits=160, DepartmentID = departments.Single(s => s.Name == "xd").DepartmentID},
-                new Course() {CourseID=1234,Title="Riigikaitse",Credits=160,  DepartmentID = departments.Single(s => s.Name == "xd").DepartmentID}}
-            };
-
-            foreach (Course c in courses)
-            {
-                context.Courses.Add(c);
-            }
-            context.SaveChanges();
             var courseInstructors = new CourseAssignment[]
             {
                 new CourseAssignment
@@ -174,8 +162,7 @@ namespace ContosoUniversityTARpe21.Data
             }
             context.SaveChanges();
 
-
-            var enrollments = new Enrollment[] 
+            var enrollments = new Enrollment[]
             {
                 new Enrollment{StudentID=1,CourseID=1050,Grade=Grade.A},
                 new Enrollment{StudentID=1,CourseID=6900,Grade=Grade.B},
@@ -192,15 +179,13 @@ namespace ContosoUniversityTARpe21.Data
                 new Enrollment{StudentID=5,CourseID=1050,Grade=Grade.A},
                 new Enrollment{StudentID=5,CourseID=6900,Grade=Grade.A},
                 new Enrollment{StudentID=5,CourseID=1420,Grade=Grade.F},
-            }; 
+            };
             foreach (Enrollment e in enrollments)
             {
                 context.Enrollments.Add(e);
             }
             context.SaveChanges();
-                   
 
-            
 
         }
     }

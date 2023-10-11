@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ContosoUniversityTARpe21.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20230918114349_uus")]
-    partial class uus
+    [Migration("20231011063854_ep")]
+    partial class ep
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -88,7 +88,7 @@ namespace ContosoUniversityTARpe21.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<byte>("RowVersion")
+                    b.Property<byte?>("RowVersion")
                         .IsConcurrencyToken()
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("tinyint");

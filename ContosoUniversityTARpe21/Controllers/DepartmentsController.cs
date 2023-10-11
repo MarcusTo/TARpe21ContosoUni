@@ -30,7 +30,7 @@ namespace ContosoUniversityTARpe21.Controllers
             string query = "SELECT * FROM Department WHERE DepartmentID = {0}";
             var department = await _context.Departments
                 .FromSqlRaw(query, id)
-                .Include(d =>  d.Administrator)
+                .Include(d => d.Administrator)
                 .AsNoTracking()
                 .FirstOrDefaultAsync();
             if (department == null)
@@ -41,7 +41,7 @@ namespace ContosoUniversityTARpe21.Controllers
         }
 
         //get create
-         public IActionResult Create() 
+        public IActionResult Create()
         {
             ViewData["InstructorID"] = new SelectList(_context.Instructors, "ID", "FullName");
             return View();
@@ -86,9 +86,12 @@ namespace ContosoUniversityTARpe21.Controllers
         //post edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, byte[] rowVersion)
+        public async Task<IActionResult> Edit(int id, byte[] rowVersion)
         {
-            if (id == null) 
+            ModelState.Remove("Courses");
+            ModelState.Remove("Administrator");
+            ModelState.Remove("RowVersion");
+            if (id == null)
             {
                 return NotFound();
             }
@@ -108,7 +111,7 @@ namespace ContosoUniversityTARpe21.Controllers
 
             _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVersion;
 
-            if (await TryUpdateModelAsync<Department>(departmentToUpdate, "", s => s.Name,s => s.StartDate,s => s.Budget,s => s.InstructorID))
+            if (await TryUpdateModelAsync<Department>(departmentToUpdate, "", s => s.Name, s => s.StartDate, s => s.Budget, s => s.InstructorID))
             {
                 try
                 {
@@ -208,7 +211,7 @@ namespace ContosoUniversityTARpe21.Controllers
             }
             catch (DbUpdateConcurrencyException ex)
             {
-                return RedirectToAction(nameof(Delete), new {concurrencyError = true, id = department.DepartmentID});
+                return RedirectToAction(nameof(Delete), new { concurrencyError = true, id = department.DepartmentID });
             }
         }
     }

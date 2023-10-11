@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TARpe21ContosoUniversity\\TARpe21ContosoUni\\ContosoUniversityTARpe21\\ContosoUniversityTARpe21.csproj": {}
+    "C:\\Users\\opilane\\source\\repos\\TARpe21ContosoUni\\ContosoUniversityTARpe21\\ContosoUniversityTARpe21.csproj": {}
   },
   "projects": {
-    "D:\\TARpe21ContosoUniversity\\TARpe21ContosoUni\\ContosoUniversityTARpe21\\ContosoUniversityTARpe21.csproj": {
+    "C:\\Users\\opilane\\source\\repos\\TARpe21ContosoUni\\ContosoUniversityTARpe21\\ContosoUniversityTARpe21.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TARpe21ContosoUniversity\\TARpe21ContosoUni\\ContosoUniversityTARpe21\\ContosoUniversityTARpe21.csproj",
+        "projectUniqueName": "C:\\Users\\opilane\\source\\repos\\TARpe21ContosoUni\\ContosoUniversityTARpe21\\ContosoUniversityTARpe21.csproj",
         "projectName": "ContosoUniversityTARpe21",
-        "projectPath": "D:\\TARpe21ContosoUniversity\\TARpe21ContosoUni\\ContosoUniversityTARpe21\\ContosoUniversityTARpe21.csproj",
-        "packagesPath": "C:\\Users\\toman\\.nuget\\packages\\",
-        "outputPath": "D:\\TARpe21ContosoUniversity\\TARpe21ContosoUni\\ContosoUniversityTARpe21\\obj\\",
+        "projectPath": "C:\\Users\\opilane\\source\\repos\\TARpe21ContosoUni\\ContosoUniversityTARpe21\\ContosoUniversityTARpe21.csproj",
+        "packagesPath": "C:\\Users\\opilane\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\opilane\\source\\repos\\TARpe21ContosoUni\\ContosoUniversityTARpe21\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\toman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\opilane\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -91,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

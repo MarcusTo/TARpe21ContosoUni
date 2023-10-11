@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoUniversity.Data;
-using ContosoUniversity.Models;
 using ContosoUniversityTARpe21.Data;
 using ContosoUniversityTARpe21.Models;
 using Microsoft.AspNetCore.Mvc;

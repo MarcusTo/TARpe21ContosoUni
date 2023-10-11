@@ -86,7 +86,7 @@ namespace ContosoUniversityTARpe21.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<byte>("RowVersion")
+                    b.Property<byte?>("RowVersion")
                         .IsConcurrencyToken()
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("tinyint");

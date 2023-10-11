@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ContosoUniversityTARpe21.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20230915120808_inni1")]
-    partial class inni1
+    [Migration("20231011061919_contosouniversitytarpe21marcus")]
+    partial class contosouniversitytarpe21marcus
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,7 +32,7 @@ namespace ContosoUniversityTARpe21.Migrations
                     b.Property<int>("Credits")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DepartmentID")
+                    b.Property<int>("DepartmentID")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -197,15 +197,19 @@ namespace ContosoUniversityTARpe21.Migrations
 
             modelBuilder.Entity("ContosoUniversityTARpe21.Models.Course", b =>
                 {
-                    b.HasOne("ContosoUniversityTARpe21.Models.Department", null)
+                    b.HasOne("ContosoUniversityTARpe21.Models.Department", "Department")
                         .WithMany("Courses")
-                        .HasForeignKey("DepartmentID");
+                        .HasForeignKey("DepartmentID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
                 });
 
             modelBuilder.Entity("ContosoUniversityTARpe21.Models.CourseAssignment", b =>
                 {
                     b.HasOne("ContosoUniversityTARpe21.Models.Course", "Course")
-                        .WithMany()
+                        .WithMany("CourseAssignments")
                         .HasForeignKey("CourseID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -252,7 +256,7 @@ namespace ContosoUniversityTARpe21.Migrations
             modelBuilder.Entity("ContosoUniversityTARpe21.Models.OfficeAssignment", b =>
                 {
                     b.HasOne("ContosoUniversityTARpe21.Models.Instructor", "Instructor")
-                        .WithOne("OfficeAssignments")
+                        .WithOne("OfficeAssignment")
                         .HasForeignKey("ContosoUniversityTARpe21.Models.OfficeAssignment", "InstructorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -262,6 +266,8 @@ namespace ContosoUniversityTARpe21.Migrations
 
             modelBuilder.Entity("ContosoUniversityTARpe21.Models.Course", b =>
                 {
+                    b.Navigation("CourseAssignments");
+
                     b.Navigation("Enrollments");
                 });
 
@@ -274,8 +280,7 @@ namespace ContosoUniversityTARpe21.Migrations
                 {
                     b.Navigation("CourseAssignments");
 
-                    b.Navigation("OfficeAssignments")
-                        .IsRequired();
+                    b.Navigation("OfficeAssignment");
                 });
 
             modelBuilder.Entity("ContosoUniversityTARpe21.Models.Student", b =>

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ContosoUniversityTARpe21.Migrations
 {
-    public partial class _829878 : Migration
+    public partial class contosouniversitytarpe21marcus : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
